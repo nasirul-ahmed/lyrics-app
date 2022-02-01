@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-body{
+/* body{
     background-image: url("/src/back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 .container{
     padding: 30px;
@@ -22,7 +22,7 @@ body{
     padding-bottom: 30px;
 }
 
-form{
+#form{
 
     position: relative;
     display: flex;
