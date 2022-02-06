@@ -14,23 +14,33 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Search Lyrics</h1>
-      <div id="form">
+    <div class="nav-bar">
+      <p class="logo"><a href="#">Music & Lyrics</a></p>
+      <ul class="nav-links">
+        <li><a href="#">Songs</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div class="container-search">
+      <form id="form">
         <input
           type="text"
           id="search"
-          name="song-text"
-          placeholder="Enter song name..."
+          name="song"
+          placeholder="Search a song...!"
         />
-        <button id="submit" onclick="getValue()" type="submit">Search</button>
-      </div>
+      </form>
     </div>
 
+    <div class="loading"></div>
+    
     <div id="content">
-      <ul id="result"></ul>
-      <p id="lyrics">Lyrics will show up here...</p>
+      <div style="text-align: center" id="recent-heading"></div>
+      <!-- <ul id="result"></ul> -->
+
+      <ul class="recents"></ul>
     </div>
     <script src="script.js"></script>
+    <script src="src/data.js"></script>
   </body>
 </html>
