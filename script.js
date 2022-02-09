@@ -32,7 +32,14 @@ function displayData(data) {
     img.classList.add("song-image");
     img.src = track.images.background;
     img.alt = "some things";
-    li.appendChild(img);
+    
+    const a = document.createElement("a");
+    a.classList.add("image-cont");
+    a.href=`/song_details.html?songId=${track.key}`;
+    // ?UserId ={{user.userLoginID}}
+    a.appendChild(img);
+    
+    li.appendChild(a);
 
     const divContainer = document.createElement("div");
     divContainer.classList.add("container");
@@ -130,49 +137,7 @@ const getInputData = (e) => {
 
 seacrhText.addEventListener("input", getInputData);
 songImage.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.location.href("song_details.html");
+  console.log("click")
+  //window.location.href=window.location.href + "song_details.html"
 });
 
-// const displaySearchedData = (data) => {
-//   console.log(data);
-//   loading.remove();
-//   recents.remove();
-
-//   const ul = document.createElement("ul");
-//   ul.classList.add("recents");
-
-//   data.map((track) => {
-//     // console.log(track);
-
-//     const li = document.createElement("li");
-//     li.classList.add("card");
-
-//     const img = document.createElement("img");
-//     img.src = track.images.background;
-//     img.alt = "some things";
-
-//     li.appendChild(img);
-
-//     const divContainer = document.createElement("div");
-//     divContainer.classList.add("container");
-//     li.appendChild(divContainer);
-
-//     const titleText = document.createElement("p");
-//     const title = track.title;
-
-//     titleText.innerHTML = `<b>${
-//       title.length > 30 ? title.substring(0, 30) : title
-//     }</b>`;
-//     divContainer.appendChild(titleText);
-
-//     const subTitile = document.createElement("p");
-//     const subtitle = track.subtitle;
-//     subTitile.innerText =
-//       subtitle.length > 30 ? subtitle.substring(0, 15) : subtitle;
-//     divContainer.appendChild(subTitile);
-
-//     ul.appendChild(li);
-//   });
-//   content.appendChild(ul);
-// };
